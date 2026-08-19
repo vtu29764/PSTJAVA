@@ -1,0 +1,54 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+
+            if (a == 1) {
+                // Check Odd
+                System.out.println((b % 2 != 0) ? "ODD" : "EVEN");
+
+            } else if (a == 2) {
+                // Check Prime
+                boolean prime = true;
+
+                if (b < 2) {
+                    prime = false;
+                }
+
+                for (int j = 2; j * j <= b; j++) {
+                    if (b % j == 0) {
+                        prime = false;
+                        break;
+                    }
+                }
+
+                System.out.println(prime ? "PRIME" : "COMPOSITE");
+
+            } else if (a == 3) {
+                // Check Palindrome
+                int original = b;
+                int reverse = 0;
+
+                while (b != 0) {
+                    reverse = reverse * 10 + b % 10;
+                    b /= 10;
+                }
+
+                System.out.println(
+                    original == reverse ? "PALINDROME" : "NOT PALINDROME"
+                );
+            }
+        }
+
+        sc.close();
+    }
+}
