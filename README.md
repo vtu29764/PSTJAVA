@@ -1,0 +1,2 @@
+# PSTJAVA
+Weekly task
